@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="bootstrap.css" />
+	<title>WebSocket Chat Client</title>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><!--Реми Шарп. Поддержка HTML5-->
+</head>
+<body class="col-lg-12">
+	<header class="page-header row">
+		<h1 class="col-lg-5">Быстрый чат<small> Добро пожаловать</small></h1>
+		<div class="btn-group col-lg-7">
+			<button class="btn btn-default" onClick="initWebSocket();">
+				<span class="glyphicon glyphicon-log-in"></span> Войти
+			</button>
+			<button class="btn btn-default" onClick="stopWebSocket();">
+				<span class="glyphicon glyphicon-off"></span>Выйти
+			</button>
+			<button class="btn btn-default" onClick="checkSocket();">
+				<span class="glyphicon glyphicon-stats"></span>Состояние
+			</button>
+		</div>
+	</header>
+	<form class="row">
+		<div class="col-lg-2">
+			<input type="text" id="inputNick" class="form-control" value="name" />
+		</div>
+		<div class="col-lg-6 input-group">
+			<input type="text" id="inputText" class="form-control" onkeydown="if(event.keyCode==13)sendMessage();">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" onClick="sendMessage();">
+					<span class="glyphicon glyphicon-comment"></span>Отправить!
+				</button>
+			</span>
+		</div>
+	</form>
+	<hr>
+	<section id="message-section" style="height:60%; overflow:auto;">
+		<article class="alert alert-success">Привет Бил<span class="navbar-right">Август Франциск</span></article>
+		<article class="alert alert-info">Я Шон - корнишен<span class="navbar-right">Шон Макарон</span></article>
+		<!-- ВСТАВКА ОТВЕТА -->
+	</section>
+	<footer class="navbar-fixed-bottom">
+		Copyright © <time datetime="2016-10-22">22 Октября 2016</time> Федоров Никита
+	</footer>
+
+        <script type="text/javascript" src="jsconnect.js"></script>
+</body>
+</html>
