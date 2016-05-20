@@ -20,6 +20,7 @@
 
 ###Класс ChatServer
 Основной класс. Реализует серверные методы
+![alt tag](http://s50.radikal.ru/i130/1605/d2/e31cdb8e1928.png) 
 При создании соединения вызывается метод void onNewConnection(); где создается соединение с клиентом по средствам сокета QWebSocket *pSocket и обрабатываются его состояния:
 connect(pSocket, SIGNAL(textMessageReceived(QString)), this, SLOT(processMessage(QString)));
 connect(pSocket, SIGNAL(disconnected()), this, SLOT(socketDisconnected()));
